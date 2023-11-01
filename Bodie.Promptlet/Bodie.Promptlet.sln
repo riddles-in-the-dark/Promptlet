@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bodie.Promptlet.Web", "Bodie.Promptlet.Web\Bodie.Promptlet.Web.csproj", "{167C4B97-3DCE-4B2E-938A-3C0D33B5D0B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bodie.Promptlet.Infrastructure", "Bodie.Promptlet.Infrastructure\Bodie.Promptlet.Infrastructure.csproj", "{90CD2DCB-E2AA-468D-BA67-5615B8DF965E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{167C4B97-3DCE-4B2E-938A-3C0D33B5D0B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{167C4B97-3DCE-4B2E-938A-3C0D33B5D0B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{167C4B97-3DCE-4B2E-938A-3C0D33B5D0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167C4B97-3DCE-4B2E-938A-3C0D33B5D0B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CD2DCB-E2AA-468D-BA67-5615B8DF965E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CD2DCB-E2AA-468D-BA67-5615B8DF965E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CD2DCB-E2AA-468D-BA67-5615B8DF965E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CD2DCB-E2AA-468D-BA67-5615B8DF965E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4B78D06-879B-41F0-B9C5-EE67558E92E4}
+	EndGlobalSection
+EndGlobal

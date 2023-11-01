@@ -1,0 +1,22 @@
+﻿@page
+@using Microsoft.AspNetCore.Components
+@model IndexModel
+@{
+
+}
+
+<div class="row">
+    <div class="container bg-light">
+  
+        <div class="dropdown sm-light">
+         @foreach (var item in Model.ComposedPromptlets)
+                {
+   
+                      <a class="dropdown-item text-dark" asp-page="./GeneratePrompt" asp-route-id="@item.ComposedPromptletId">@item.ComposedPromptletName</a>
+
+                }
+                </div>
+
+   
+    </div>
+</div>

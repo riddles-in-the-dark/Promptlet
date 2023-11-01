@@ -1,0 +1,72 @@
+﻿@page "id:int"
+@model Bodie.Promptlet.Web.Pages.AddPromptletArtifactModel
+@{
+}
+
+<div>
+    <h3>Add Promptlet Artifact</h3>
+    <form method="post">
+        <input asp-for="ComposedPromptlet.ComposedPromptletId" type="hidden" />
+        <div class="container text-left ">
+            <div class="row">
+                <h1>@Html.DisplayFor(model=>model.ComposedPromptlet.ComposedPromptletName)</h1>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row bg-light rounded box-shadow text-dark p-3">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-md-2">
+                                Order
+                                @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactOrder
+                                , new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <div class="col-md-2">
+                                Version
+                                @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactVersion
+                                , new { htmlAttributes = new { @class = "form-control" } })
+                                </div>                   
+                                <div class="col-md-2">
+                                Start Delim
+                                @Html.EditorFor(model => model.PromptletArtifact.VariableStartDeliminator
+                                , new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <div class="col-md-2">
+                                End Delim
+                                @Html.EditorFor(model => model.PromptletArtifact.VariableEndDeliminator
+                                , new { htmlAttributes = new { @class = "form-control" } })
+                                </div>   
+                            </div>
+                        </div>        
+                        <div class="row">
+                            <div class="col-md-12 p-3">
+                                Name
+                                @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactName
+                                , new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-cols-md-1 p-3">
+                                Description
+                                @Html.TextAreaFor(model => model.PromptletArtifact.PromptletArtifactDescription
+                          , new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>                   
+                        <div class="row">
+                            <div class="row-cols-md-1 p-3">
+                                Content
+                                @Html.TextAreaFor(model => model.PromptletArtifact.PromptletArtifactContent
+                                    , new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>                
+                    </div>
+                <div class="btn-group p-3">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <a class="btn btn-danger"  asp-page="./AllComposedPromptlet" >Cancel</a>
+                 </div>
+
+            </div>
+        </div>
+      </div>
+     </form>
+</div>

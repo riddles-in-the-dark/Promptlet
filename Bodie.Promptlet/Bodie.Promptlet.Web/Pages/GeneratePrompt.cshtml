@@ -1,0 +1,107 @@
+﻿@page "id:int, previewPromptlet:PreviewPromptlet"
+
+@model Bodie.Promptlet.Web.Pages.GeneratePromptModel
+@{
+    ViewData["names"] = "";
+ }
+@section Scripts{
+    <script>
+
+$(function() {
+
+   
+     $("form").on("submit", function(event) {
+        event.preventDefault();
+       //...-> do process for
+         alert('ready');
+    });
+
+    $("#genPrompt").click(function(e) 
+    {  alert("ready");
+           var names = [];
+
+           $('#promptlet *').filter(':input').each(function(index){
+               var txt = '{'+ $(this).attr('name').replace('[','"').replace(']','"');
+               txt += ': ';
+               txt += '"'+$(this).val()+'"}';
+               names.push(txt);
+            });
+
+            @ViewData["names"]='['+names+']';      
+
+            $('#promptOutput').val(@ViewData["names"]);   
+        );
+    });
+});
+</script>
+}
+<link rel="stylesheet" href="./css/Highlighter.css">
+<div class="container text-left">
+    <form method="post" >
+        @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletId)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletName)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletVersion)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletDescription)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletHeader)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletFooter)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.RawBodyString)
+        @Html.HiddenFor(model=>model.PreviewPromptlet.PreviewString)
+            <div class="row">
+                <div class="col">
+                    <div id="promptlet" class="form p-3 bg-secondary bg-opacity-10  rounded-3">
+                        <h3 class="text-black">@Model.PreviewPromptlet.ComposedPromptletName  
+                            <a  asp-page="./EditComposedPromptlet" 
+                                asp-route-id="@Model.PreviewPromptlet.ComposedPromptletId"  
+                                class="btn btn-sm btn-outline-dark">
+                                Edit
+                            </a>
+                        </h3>
+                        @foreach (var item in Model.ReplaceVariableDictionary)
+                        {
+                       
+                        <div class="form-group bg-dark bg-opacity-10 rounded box-shadow p-1 m-2">
+                                <label 
+                                    for="@string.Concat(@item.Key,"_input")"  
+                                    class="card-title text-black-50 fw-bold text-capitalize m-1 ">
+                                    @item.Key.Replace("[","").Replace("]","")
+                                </label>
+                                <input 
+                                    name="@item.Key" 
+                                    type="text" 
+                                    placeholder="@item.Key.Replace("[","Enter ").Replace("]","")"  
+                                    class="form-control" 
+                                    id="@string.Concat(@item.Key,"_input")" />                    
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <input 
+                        type="submit" 
+                        id="genPrompt"  
+                        asp-all-route="@Model.PreviewPromptlet"  
+                        class="btn btn-primary" 
+                        value="Generate Prompt"/>
+                </div>
+                <div class="row">
+                    <div  class="container bg-light bg-opacity-10 rounded box-shadow ">
+                        <div class="my-3 p-3 bg-dark bg-opacity-10  rounded box-shadow">
+                            <h6 class="border-bottom border-gray pb-2 mb-0"> 
+                                Prompt Template 
+                                <i>
+                                    (@Html.DisplayFor(model=>model.ArtifactCount) Artifacts)
+                                </i>
+                            </h6>
+                            <span style="white-space: pre-line" >    
+                                @Html.Raw(@Model.PreviewPromptlet.RawBodyString.Replace("[","<mark class='rounded-3'>[").Replace("]","]</mark>"))
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label class="text-break">
+                @Html.DisplayFor(model=>model.PreviewPromptlet.PreviewString)
+            </label>         
+    </form>
+</div>
+   
