@@ -1,5 +1,6 @@
-# Overview
+#Promptly
 
+# Overview
 Promptlet is an AI prompt management system that uses templating and variable substitution to assemble prompts for use in AI tools. Promptlet provides a way to organize, reuse, and share prompts, and to generate dynamic prompts based on user input.
 
 # Features
