@@ -8,7 +8,6 @@
     <script>
 
 $(function() {
-
    
      $("form").on("submit", function(event) {
         event.preventDefault();
@@ -36,7 +35,7 @@ $(function() {
 </script>
 }
 <link rel="stylesheet" href="./css/Highlighter.css">
-<div class="container text-left">
+<div class="container text-left shadow box-shadow bg-light rounded">
     <form method="post" >
         @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletId)
         @Html.HiddenFor(model=>model.PreviewPromptlet.ComposedPromptletName)
@@ -48,21 +47,21 @@ $(function() {
         @Html.HiddenFor(model=>model.PreviewPromptlet.PreviewString)
             <div class="row">
                 <div class="col">
-                    <div id="promptlet" class="form p-3 bg-secondary bg-opacity-10  rounded-3">
-                        <h3 class="text-black">@Model.PreviewPromptlet.ComposedPromptletName  
+                    <div id="promptlet" class="form p-3 bg-light  rounded-3">
+                        <h2 class="text-dark">@Model.PreviewPromptlet.ComposedPromptletName  
                             <a  asp-page="./EditComposedPromptlet" 
                                 asp-route-id="@Model.PreviewPromptlet.ComposedPromptletId"  
                                 class="btn btn-sm btn-outline-dark">
-                                Edit
-                            </a>
-                        </h3>
+                               Edit
+                            </a> 
+                        </h2>
                         @foreach (var item in Model.ReplaceVariableDictionary)
-                        {
-                       
-                        <div class="form-group bg-dark bg-opacity-10 rounded box-shadow p-1 m-2">
+                        {                       
+                        <div class="form-group bg-dark rounded shadow box-shadow p-1 m-2">
                                 <label 
-                                    for="@string.Concat(@item.Key,"_input")"  
-                                    class="card-title text-black-50 fw-bold text-capitalize m-1 ">
+                                    for="@string.Concat(@item.Key,"_input")" 
+                                    style="color:#1ea696"
+                                    class="form-label text-capitalize m-1 ">
                                     @item.Key.Replace("[","").Replace("]","")
                                 </label>
                                 <input 
@@ -74,15 +73,18 @@ $(function() {
                             </div>
                         }
                     </div>
-                </div>
-                <div class="row p-3">
-                    <input 
+                    <div  class="btn-group btn-group-sm m-3 p-3">
+                    <input style="max-width:150px;"
                         type="submit" 
                         id="genPrompt"  
                         asp-all-route="@Model.PreviewPromptlet"  
-                        class="btn btn-primary" 
+                        class="btn btn-success" 
                         value="Generate Prompt"/>
-                </div>
+                           <a style="max-width:150px;" 
+                           class="btn btn-sm btn-danger"
+                           href="/AllComposedPromptlet">Cancel</a>              
+                       </div>
+                </div>         
                 <div class="row">
                     <div  class="container bg-light bg-opacity-10 rounded box-shadow ">
                         <div class="my-3 p-3 bg-dark bg-opacity-10  rounded box-shadow">

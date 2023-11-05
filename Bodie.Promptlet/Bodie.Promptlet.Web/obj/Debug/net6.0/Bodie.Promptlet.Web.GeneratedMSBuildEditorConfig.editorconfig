@@ -19,12 +19,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ29tcG9zZWRQcm9tcHRsZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/AddPromptCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUHJvbXB0Q29sbGVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/AddPromptletArtifact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUHJvbXB0bGV0QXJ0aWZhY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/AllComposedPromptlet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsQ29tcG9zZWRQcm9tcHRsZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/AllPromptCollections.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsUHJvbXB0Q29sbGVjdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/EditComposedPromptlet.cshtml]

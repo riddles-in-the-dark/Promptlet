@@ -2,12 +2,16 @@ using Bodie.Promptlet.Infrastructure;
 using Bodie.Promptlet.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bodie.Promptlet.Web.Pages
 {
     public class AddComposedPromptletModel : PageModel
     {
         private readonly PromptletContext _promptletContext;
+
+        [BindProperty]
+        public PromptCollection PromptCollection { get; set; }
 
         [BindProperty]
         public ComposedPromptlet ComposedPromptlet { get; set; }
@@ -19,32 +23,42 @@ namespace Bodie.Promptlet.Web.Pages
             _promptletContext = promptletContext;
         }
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            ComposedPromptlet = new ComposedPromptlet();
+            if (id != null)
+            {
+                PromptCollection = await _promptletContext.PromptCollections
+                    .Include("ComposedPromptlets")
+                    .FirstOrDefaultAsync(predicate: m => m.PromptCollectionId == id);
+            }
+
+              ComposedPromptlet = new ComposedPromptlet();
+            
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            // if (!ModelState.IsValid)
+            //  {
+            //      return Page();
+            // }
 
-            var newComposedPromptletEntity = await _promptletContext.AddAsync(ComposedPromptlet);
+            ComposedPromptlet.ComposedPromptletVersion += 1;
 
-
-            if (!ModelState.IsValid)
+            if (PromptCollection != null)
             {
-                return Page();
+                var promptCollection = await _promptletContext.FindAsync<PromptCollection>(PromptCollection.PromptCollectionId);
+                promptCollection.ComposedPromptlets.Add(ComposedPromptlet);
+                _promptletContext.Update(promptCollection);
+            }
+            else
+            {
+                await _promptletContext.AddAsync(ComposedPromptlet);
             }
 
-            // newComposedPromptletEntity.ComposedPromptletVersion += 1;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletName).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletDescription).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletHeader).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletFooter).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletVersion).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.PromptletArtifacts).IsModified = true;
             await _promptletContext.SaveChangesAsync();
-
+        
             return RedirectToPage("AllComposedPromptlet");
         }
 

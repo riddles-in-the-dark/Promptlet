@@ -1,4 +1,4 @@
-﻿@page
+﻿@page  "id:int"
 @model Bodie.Promptlet.Web.Pages.AddComposedPromptletModel
 @{
 }
@@ -19,8 +19,6 @@
         if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.getData) {
             e.preventDefault();
             e.stopPropagation();
-            
-         //   alert($(this).val.toString());
         }
     }
 );
@@ -29,42 +27,48 @@
 }
 
 <div>
-    <span  style="font-family: sans-serif; color:darkgray" class="h5">Composed Promptlet for @Model.ComposedPromptlet.ComposedPromptletName</span>
-
+    <span  
+        style="font-family: sans-serif; color:cadetblue" 
+        class="h5 p-2">
+        Composed Promptlet for @Html.DisplayFor(x=>x.PromptCollection.PromptCollectionName) Collection
+    </span>
     <form method="post">
+         <input asp-for="PromptCollection.PromptCollectionId" type="hidden" />
         <input asp-for="ComposedPromptlet.ComposedPromptletId" type="hidden" />
-        <div class="container text-left">
-            <div class="row">
+         <div class="container text-left bg-light rounded shadow box-shadow p-3">
+            <div class="row p-2">
                 <div class="col">
-                    <div class="row">
-                        <div class="form-label col-md-10">
-                           <h4> Name</h4>
+                    <div class="row p-2">
+                        <div class="col-md-10">
+                           <h4 class="form-label"> Name</h4>
                             @Html.EditorFor(model => model.ComposedPromptlet.ComposedPromptletName
                             , new { htmlAttributes = new { @class = "form-control" } })
                         </div>
-                        <div class="form-label col-md-2">
-                          <h4>Version</h4>  
+                        <div class="col-md-2">
+                          <h4 class="form-label">Version</h4>  
                             @Html.EditorFor(model => model.ComposedPromptlet.ComposedPromptletVersion
                             , new { htmlAttributes = new { @class = "form-control" } })
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-label col-form-label row-cols-md-1">
-                          <h4>Description</h4>  
+                    <div class="row p-2">
+                        <div class="row-cols-md-1">
+                          <h4 class="form-label">Description</h4>  
                             @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletDescription
                       , new { htmlAttributes = new { @class = "form-control" } })
                         </div>
                     </div>
-                    <div class="row bg-light">
-                        <div class="form-label col-form-label col">
-                            <h4>Header</h4>
-                            @Html.EditorFor(model => model.ComposedPromptlet.ComposedPromptletHeader
+                    <div class="row p-2">
+                        <div class="row-cols-md-1">
+                            <h4 class="form-label">Header</h4>
+                            @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletHeader
                                             , new { htmlAttributes = new { @class = "form-control" } })
                                          
-                            <br />
-                            
-                            <h4>Artifacts<a asp-page="./" asp-route-id="-1"  class="btn btn-outline-info btn-sm lh-1 p-sm-1">Add</a> 
-                             </h4>
+                            @if (@Model.ComposedPromptlet.ComposedPromptletId>0)
+                            {
+                                   <h2 style="color:#1ea696;">Artifacts<a asp-page="./AddPromptletArtifact" asp-route-id="@Model.ComposedPromptlet.ComposedPromptletId"  class="btn btn-outline-info btn-sm lh-1 p-sm-1">Add</a> 
+                             </h2>
+                            }
+                         
                             <div class="container bg-light bg-opacity-10 rounded box-shadow ">
 
 
@@ -130,26 +134,33 @@
 
                                 }
                                 </ul>
-                                <div class="border-bottom border-gray p-2 ">
+
                        
                             </div>
-                                <h4>Footer</h4>
-
-                                @Html.EditorFor(model => model.ComposedPromptlet.ComposedPromptletFooter
-                          , new { htmlAttributes = new { @class = "form-control col" } })
-
+        
                             </div>
 
                         </div>
 
                     </div>
+                        <div class="row p-2">
+                        <div class="row-cols-md-1">
+                        <h4 class="form-label" >Footer</h4>
+
+                                @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletFooter
+                          , new { htmlAttributes = new { @class = "form-control col" } })
+
+                        </div>
 
                 </div>
-                <div class="btn-group btn-group-sm">
-               <input type="submit" value="Save" class="btn btn-success" />
-                <a asp-page="./GeneratePrompt" asp-route-id="@Model.ComposedPromptlet.ComposedPromptletId"  class="btn btn-sm btn-outline-dark">Try it out</a> 
+              <div class="btn-group btn-group-sm">
+               <input type="submit" 
+                   value="Save" 
+                   class="btn btn-success" />
+                <a asp-page="./GeneratePrompt" 
+                asp-route-id="@Model.ComposedPromptlet.ComposedPromptletId"  class="btn btn-primary">Try it out</a> 
 
-               <a class="btn btn-sm btn-outline-danger" href="/AllComposedPromptlet">Cancel</a>
+               <a class="btn btn-danger" href="/AllComposedPromptlet">Cancel</a>
         
                 </div>
      </div>  </div>

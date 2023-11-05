@@ -1,0 +1,51 @@
+﻿@page
+@using Bodie.Promptlet.Web.Pages
+@{
+}
+@model AllPromptCollectionsModel
+@{
+    ViewData["Title"] = "All Prompt Collections";
+ }
+
+<h1>@ViewData["Title"]</h1> 
+<hr/>
+<dl class="row">
+    <dt class="col-md-2"> 
+        <a 
+            asp-page="./AddPromptCollection"
+             class="btn btn-sm btn-outline-success">
+            New
+        </a>
+        </dt>
+</dl>
+<dd class="col-sm-10">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>@Html.DisplayName("Name")</th>
+            <th>Edit | Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.PromptCollections)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromptCollectionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComposedPromptlets.Count())
+                </td>
+
+                <td>
+                    <div class="btn-group-sm">
+                    <a asp-page="./EditPromptCollection" class="btn btn-sm btn-outline-dark" asp-route-id="@item.PromptCollectionId">Edit</a>                                         
+                    <a asp-page="./Index" class="btn btn-sm btn-outline-dark" onclick="return confirm('Are you sure you want go back?');" 
+                    asp-page-handler="Delete" asp-route-id="@item.PromptCollectionId">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+</dd>

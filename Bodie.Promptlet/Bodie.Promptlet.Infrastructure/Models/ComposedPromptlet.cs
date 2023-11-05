@@ -14,5 +14,6 @@ namespace Bodie.Promptlet.Infrastructure.Models
         public string? ComposedPromptletHeader { get; set; }
         public string? ComposedPromptletFooter { get; set; }
         public ICollection<PromptletArtifact> PromptletArtifacts { get; set; } = new List<PromptletArtifact>();
+        public ICollection<PromptCollection> PromptCollections { get; set; } = new List<PromptCollection>();
     }
 }

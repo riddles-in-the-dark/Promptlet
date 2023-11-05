@@ -11,8 +11,33 @@ namespace Bodie.Promptlet.Infrastructure
             {
                 return;
             }
+       
+            var promptletArtifacts = GetPromptletArtifacts();
 
-            var prompletArtifacts = new PromptletArtifact[]
+            var composedPromplets = GetComposedPromptlets(promptletArtifacts);
+
+            var promptCollection = GetPromptCollections(composedPromplets);
+
+            context.PromptCollections.AddRange(promptCollection);
+
+            context.SaveChanges();
+        }
+
+        private static PromptCollection[] GetPromptCollections(ComposedPromptlet[] composedPromplets)
+        {
+            return new PromptCollection[]
+            {
+                new PromptCollection
+                {
+                    PromptCollectionName = "Composed Promptlets",
+                    ComposedPromptlets = composedPromplets
+                }
+            };
+        }
+
+        private static PromptletArtifact[] GetPromptletArtifacts()
+        {
+            return new PromptletArtifact[]
             {
                 new PromptletArtifact
                 {
@@ -55,8 +80,11 @@ namespace Bodie.Promptlet.Infrastructure
                     VariableEndDeliminator = "]"
                 }
             };
+        }
 
-            var composedPromplet = new ComposedPromptlet[]
+        private static ComposedPromptlet[] GetComposedPromptlets(PromptletArtifact[] promptletArtifacts)
+        {
+          return  new ComposedPromptlet[]
             {
                 new ComposedPromptlet
                 {
@@ -65,12 +93,9 @@ namespace Bodie.Promptlet.Infrastructure
                     ComposedPromptletDescription="Perform a standard code review",
                     ComposedPromptletHeader="",
                     ComposedPromptletFooter="",
-                    PromptletArtifacts=prompletArtifacts
+                    PromptletArtifacts=promptletArtifacts
                 }
             };
-
-            context.ComposedPromplets.AddRange(composedPromplet);
-            context.SaveChanges();
         }
 
     }

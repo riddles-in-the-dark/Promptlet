@@ -2,21 +2,73 @@
 @using Microsoft.AspNetCore.Components
 @model IndexModel
 @{
-
+    
+}
+@section Scripts{
+    <script>
+   
+        $('#addPromptCollection').on('hover',
+    function(e){
+        if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.getData) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            alert(data('msg'));
+        }
+    }
+);
+  
+    </script>
 }
 
-<div class="row">
-    <div class="container bg-light">
-  
-        <div class="dropdown sm-light">
-         @foreach (var item in Model.ComposedPromptlets)
-                {
-   
-                      <a class="dropdown-item text-dark" asp-page="./GeneratePrompt" asp-route-id="@item.ComposedPromptletId">@item.ComposedPromptletName</a>
+<div class="row bg-light rounded shadow box-shadow p-2">
+    <div class="dropdown flex-column">
+            <div class="dropdown-header">
+            <a class="btn btn-outline-success"
+            asp-page="./AddPromptCollection" >
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+  <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z"/>
+  <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z"/>
+</svg>
+            Add a New Prompt Collection</a>
+             </div>
+               <div class="dropdown-divider"> </div> 
+        @foreach(var coll in @Model.PromptCollections)
+        {  
+            <div class="dropdown-header" >
+                <h3 style="color:#1ea696">
+ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+  <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+</svg>
+                    @coll.PromptCollectionName
+                    <a asp-page="./AddComposedPromptlet" 
+                    id="addPromptCollection"
+                    asp-route-id="@coll.PromptCollectionId"
+                    style="color:#1ea696"
+                    title=@string.Concat("Add new Composed Promptlet to ", @coll.PromptCollectionName)
+                    >
 
-                }
-                </div>
-
+                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-node-plus-fill" viewBox="0 0 16 16">
+  <path d="M11 13a5 5 0 1 0-4.975-5.5H4A1.5 1.5 0 0 0 2.5 6h-1A1.5 1.5 0 0 0 0 7.5v1A1.5 1.5 0 0 0 1.5 10h1A1.5 1.5 0 0 0 4 8.5h2.025A5 5 0 0 0 11 13zm.5-7.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 1 0z"/>
+</svg>
+                    </a>
+                </h3>
+         </div>
+            @foreach(var pmpt in @coll.ComposedPromptlets)
+            {
+                         <div class="dropdown-item">
    
+                      <a class="dropdown-item-text " 
+                      asp-page="./GeneratePrompt" 
+                      asp-route-id="@pmpt.ComposedPromptletId"
+                      style="text-decoration:none"
+                      >
+                          @pmpt.ComposedPromptletName
+                          
+                      </a></div>
+            }           
+            <div class="dropdown-divider"> </div>             
+        }
     </div>
+
 </div>

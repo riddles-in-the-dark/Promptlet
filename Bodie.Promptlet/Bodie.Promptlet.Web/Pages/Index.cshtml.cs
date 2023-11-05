@@ -1,6 +1,7 @@
 ﻿using Bodie.Promptlet.Infrastructure;
 using Bodie.Promptlet.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bodie.Promptlet.Web.Pages
 {
@@ -10,11 +11,12 @@ namespace Bodie.Promptlet.Web.Pages
 
         private static PromptletContext _promptletContext;
 
-        public ICollection<ComposedPromptlet> ComposedPromptlets;
+       public ICollection<PromptCollection> PromptCollections;
 
         public void OnGet()
         {
-            ComposedPromptlets = _promptletContext.ComposedPromplets.ToList();
+           PromptCollections = _promptletContext.PromptCollections.Include("ComposedPromptlets").ToList();
+     
         }
 
         public IndexModel(ILogger<IndexModel> logger, PromptletContext context)
