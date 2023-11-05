@@ -4,86 +4,114 @@
 }
 
 <div >
-    <h3>Edit Promptlet Artifact</h3>
-
+    <h2 style="color:#1ea696;">Edit Promptlet Artifact</h2>
+        <h6 style="color:tomato;">
+            Version
+            @Html.DisplayFor(model => model.PromptletArtifact.PromptletArtifactVersion
+            , new { htmlAttributes = new { @class = "form-control", 
+                    @style="max-width:80px;;" } })
+        </h6> 
     <form method="post">
         <input asp-for="PromptletArtifact.PromptletArtifactId" type="hidden" />
         <div class="container text-left">
-            <div class="row">
-                <div class="col">
-                    <div class="row bg-light rounded shadow-lg text-dark p-2">
-                        <div class="container ">
-                        <div class="row">
-                            <div class="form-label col-md-2">
-                            Order
-                            @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactOrder
-                            , new { htmlAttributes = new { @class = "form-control" } })
-                            </div>
-                            <div class="form-label col-md-2">
-                            Version
-                            @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactVersion
-                            , new { htmlAttributes = new { @class = "form-control" } })
-                            </div>
-                        </div>        
-                        <div class="row">
-                            <div class="form-label col-md-12">
-                                Name
-                                @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactName
-                                , new { htmlAttributes = new { @class = "form-control" } })
-                            </div>
-                        </div>
-                        <div class="row">
-                        <div class="form-label col-form-label row-cols-md-1">
-                            Description
-                            @Html.TextAreaFor(model => model.PromptletArtifact.PromptletArtifactDescription
-                      , new { htmlAttributes = new { @class = "form-control" } })
+             <div class="row bg-light rounded shadow box-shadow shadow-lg text-dark p-2">  
+                @*Promptlet Artifact Name*@
+                <div class="row">
+                    <div class="col-md-12">
+                            <div class="form-floating mb-3" >
+                        @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactName
+                        , new { htmlAttributes = 
+                            new { 
+                                @class = "form-control", 
+                                @placeholder="PromptletName" } })
+                        <label class="form-label" 
+                            for="PromptletArtifact_PromptletArtifactName">
+                            Name</label>
                         </div>
                     </div>
-                    <div class="row">
-                         <div class="form-label col-md-2 row-cols-2">
-                            Variable Deliminators
-                         </div>                       
-                         <div class="col-form-label col-md-2 text-center">
-                            Start
-                            @Html.EditorFor(model => model.PromptletArtifact.VariableStartDeliminator
-                            , new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @*Promptlet Artifact Description*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-floating mb-3" >
+                        @Html.EditorFor(model => model.PromptletArtifact.PromptletArtifactDescription
+                        , new { htmlAttributes = 
+                            new { 
+                                @class = "form-control", 
+                                @placeholder="PromptletArtifactDescription" } })
+                        <label class="form-label" 
+                            for="PromptletArtifact_PromptletArtifactDescription">
+                            Description</label>
                         </div>
-                         <div class="col-form-label col-md-2 text-center">
-                            End
+                        </div>
+                    </div>
+                @*Variable Delimiters*@
+                <div class="row">
+                    <div class="col-3">
+                        <h5 class="form-label">Variable Delimiters</h5> 
+                    </div>
+                    <div class="col-2">
+                        <div class="form-floating mb-3" >
+                        @Html.EditorFor(model => model.PromptletArtifact.VariableStartDeliminator
+                        , new { htmlAttributes = 
+                            new { 
+                                @class = "form-control", 
+                                @placeholder="VariableStartDeliminator",
+                                @style="max-width:50px;"} })
+                        <label class="form-label" 
+                            for="PromptletArtifact_VariableStartDeliminator">
+                            Start</label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-floating mb-3" >
                             @Html.EditorFor(model => model.PromptletArtifact.VariableEndDeliminator
-                            , new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        <div class="form-label col-md-4 row-cols-2">
-                            Variables in Content
-                            <div class="form-control form-check-inline">
-                                <dl >                              
-                               @foreach (var item in Model.VariablesInContent)
-                                        {
-                                    <dd>
-                                        @Html.DisplayFor(x=>item.Key)
-                                    </dd>
-                                        } 
-                                </dl>
-                            </div>
+                            , new { htmlAttributes = 
+                                new { 
+                                    @class = "form-control", 
+                                    @placeholder="VariableEndDeliminator",
+                                    @style="max-width:50px;"} })
+                            <label class="form-label" 
+                                for="PromptletArtifact_VariableEndDeliminator">
+                                End</label>
                         </div>
                     </div>
-                   <div class="row">
-                        <div class="form-label col-form-label row-cols-md-1">
-                            Content
-                            @Html.TextAreaFor(model => model.PromptletArtifact.PromptletArtifactContent
-                      , new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>                
+                    </div>  
+                @*Promptlet Artifact Content*@
+                <div class="row">
+                    <div class="row-cols-1">
+                        <h5 class="form-label" 
+                            for="PromptletArtifact_PromptletArtifactContent">
+                            Promptlet Content</h5>
+                            @Html.TextAreaFor(model => model.PromptletArtifact.PromptletArtifactContent,
+                            5,3,new { htmlAttributes = new {@class = "form-control"} })
+                    </div>
+                </div>    
+             </div>
+             @*Promptlet Artifact Content Variables Found*@
+            <div class="container bg-gradient rounded">
+                <div class="col-md-12 row-cols-2">
+                  <h3 style="color:#1ea696;" class="m-3"> Variables found in Content</h3>
+                    <div class="p-3">
+                        <dl>  
+                            @foreach (var item in Model.VariablesInContent)
+                            {
+                                <dd style="color:tomato;">
+                                    @Html.DisplayFor(x=>item.Key)
+                                </dd>
+                            }
+                        </dl>
+                    </div>
                 </div>
-                <div class="btn-group-sm p-3">
-                <input type="submit" value="Save" class="btn btn-success" />
-                 <a class="btn btn-danger"  asp-page="./EditComposedPromptlet" asp-route-id="@Model.PromptletArtifact.ComposedPromptlets.First()">Cancel</a>
-          
-                </div>
-
             </div>
-            </div>
-            </div>
-       </div> 
-       </form>
-    </div>
+        </div>
+        @*Submit button*@
+        <div class="btn-group-sm p-3">
+        <input type="submit" value="Save" class="btn btn-success" />
+        <a class="btn btn-danger"  
+            asp-page="./EditComposedPromptlet" 
+            asp-route-id="@Model.PromptletArtifact.ComposedPromptlets.First()">
+            Cancel</a>
+        </div>
+    </form>
+</div>
