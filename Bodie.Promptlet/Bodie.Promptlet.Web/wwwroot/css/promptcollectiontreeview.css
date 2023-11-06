@@ -1,0 +1,57 @@
+﻿.treeview {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .treeview ol {
+        list-style-type: none;
+    }
+    /* or */
+    .treeview ul {
+        list-style-type: none;
+    }
+
+    .treeview li {
+        box-shadow:inherit;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #eee;
+        margin-bottom: 5px;
+    }
+
+        .treeview li:hover {
+            background-color: #ddd;
+            transition:ease-in-out 1s;
+            cursor: pointer;
+        }
+
+        .treeview li::marker {
+            display: none;
+        }
+
+        .treeview li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .treeview li ul {
+            display: none;
+        }
+
+        .treeview li.expanded > ul {
+            display: block;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+            .treeview li.expanded > ul li {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+/* (X) DOES NOT MATTER */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}

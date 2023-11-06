@@ -33,6 +33,7 @@ namespace Bodie.Promptlet.Web.Pages
             }
 
               ComposedPromptlet = new ComposedPromptlet();
+            ComposedPromptlet.ComposedPromptletVersion = 1;
             
             return Page();
         }
@@ -44,7 +45,6 @@ namespace Bodie.Promptlet.Web.Pages
             //      return Page();
             // }
 
-            ComposedPromptlet.ComposedPromptletVersion += 1;
 
             if (PromptCollection != null)
             {
@@ -58,8 +58,9 @@ namespace Bodie.Promptlet.Web.Pages
             }
 
             await _promptletContext.SaveChangesAsync();
+            var id = ComposedPromptlet.ComposedPromptletId;
         
-            return RedirectToPage("AllComposedPromptlet");
+            return RedirectToPage("EditComposedPromptlet",id);
         }
 
     }

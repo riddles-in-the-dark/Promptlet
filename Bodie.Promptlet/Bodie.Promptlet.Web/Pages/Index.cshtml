@@ -4,9 +4,17 @@
 @{
     
 }
+<link rel="stylesheet" href="../css/promptcollectiontreeview.css">
 @section Scripts{
     <script>
-   
+         const treeviewItems = document.querySelectorAll('.treeview li');
+
+        for (const item of treeviewItems) {
+            item.addEventListener('click', (event) => {
+                const itemElement = event.target.closest('li');
+                itemElement.classList.toggle('expanded');
+            });
+        }
         $('#addPromptCollection').on('hover',
     function(e){
         if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.getData) {
@@ -21,54 +29,72 @@
     </script>
 }
 
-<div class="row bg-light rounded shadow box-shadow p-2">
-    <div class="dropdown flex-column">
-            <div class="dropdown-header">
-            <a class="btn btn-outline-success"
-            asp-page="./AddPromptCollection" >
-         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
-  <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z"/>
-  <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z"/>
-</svg>
-            Add a New Prompt Collection</a>
-             </div>
-               <div class="dropdown-divider"> </div> 
-        @foreach(var coll in @Model.PromptCollections)
-        {  
-            <div class="dropdown-header" >
-                <h3 style="color:#1ea696">
- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
-  <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
-</svg>
-                    @coll.PromptCollectionName
-                    <a asp-page="./AddComposedPromptlet" 
-                    id="addPromptCollection"
-                    asp-route-id="@coll.PromptCollectionId"
-                    style="color:#1ea696"
-                    title=@string.Concat("Add new Composed Promptlet to ", @coll.PromptCollectionName)
-                    >
-
-                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-node-plus-fill" viewBox="0 0 16 16">
-  <path d="M11 13a5 5 0 1 0-4.975-5.5H4A1.5 1.5 0 0 0 2.5 6h-1A1.5 1.5 0 0 0 0 7.5v1A1.5 1.5 0 0 0 1.5 10h1A1.5 1.5 0 0 0 4 8.5h2.025A5 5 0 0 0 11 13zm.5-7.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 1 0z"/>
-</svg>
-                    </a>
-                </h3>
-         </div>
-            @foreach(var pmpt in @coll.ComposedPromptlets)
+<div class="container bg-dark rounded shadow box-shadow p-2">
+    <div class="row">
+        <ul class="treeview">
+            @foreach(var promptCollection in @Model.PromptCollections)
             {
-                         <div class="dropdown-item">
-   
-                      <a class="dropdown-item-text " 
-                      asp-page="./GeneratePrompt" 
-                      asp-route-id="@pmpt.ComposedPromptletId"
-                      style="text-decoration:none"
-                      >
-                          @pmpt.ComposedPromptletName
-                          
-                      </a></div>
-            }           
-            <div class="dropdown-divider"> </div>             
-        }
-    </div>
-
+              <li class="dropdown">
+                   <div class="dropdown-header">
+                        <h3 style="color:#1ea696">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                                <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+                            </svg>
+                        @promptCollection.PromptCollectionName 
+                         <a style="color:#1ea696;" 
+                            class="btn btn-sm btn-outline-light font-monospace rounded" 
+                                asp-page="./EditPromptCollection" 
+                                  asp-route-id="@promptCollection.PromptCollectionId">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                              </svg>
+                         </a>
+                        </h3>
+                    </div>
+                    <ul>
+                         @foreach(var pmpt in @promptCollection.ComposedPromptlets)
+                        {
+                            <li class="dropdown-item"> 
+                                <a class="dropdown-item-text " 
+                                  asp-page="./GeneratePrompt" 
+                                  asp-route-id="@pmpt.ComposedPromptletId"
+                                  style="text-decoration:none">
+                                 @pmpt.ComposedPromptletName</a>
+                            </li>
+                        }           
+                            <li>                   
+                                <a asp-page="./AddComposedPromptlet" 
+                                id="addPromptCollection"
+                                class="btn btn-sm btn-outline-light"
+                                asp-route-id="@promptCollection.PromptCollectionId"
+                                style="color:#1ea696"
+                                title=@string.Concat("Add new Composed Promptlet to ", @promptCollection.PromptCollectionName)
+                                >
+                                @string.Concat("Add new Composed Promptlet to ", @promptCollection.PromptCollectionName)
+                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-node-plus-fill" viewBox="0 0 16 16">
+                                <path d="M11 13a5 5 0 1 0-4.975-5.5H4A1.5 1.5 0 0 0 2.5 6h-1A1.5 1.5 0 0 0 0 7.5v1A1.5 1.5 0 0 0 1.5 10h1A1.5 1.5 0 0 0 4 8.5h2.025A5 5 0 0 0 11 13zm.5-7.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 1 0z"/>
+                                </svg>
+                                </a>
+                            </li>
+                    </ul>
+              </li>
+            }
+        </ul>
+    </div>     
+    <div class="dropdown-divider"> </div> 
+     <div class="row">
+        <div class="dropdown col-12">
+            <div class="dropdown-header">
+                <a class="btn btn-outline-success"
+                    asp-page="./AddPromptCollection" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+                    <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z"/>
+                    <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z"/>
+                    </svg>
+                    Add a New Prompt Collection
+                </a>
+            </div>
+        </div>   
+     </div>
 </div>

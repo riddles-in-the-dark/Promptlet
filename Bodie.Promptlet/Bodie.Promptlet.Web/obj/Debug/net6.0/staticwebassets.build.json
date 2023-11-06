@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OEcpXE6HFXZ4SCcYl7xx7I7lQupeejAwJQwIR6nB7Dk=",
+  "Hash": "e5sYSoaTPU/GfUjiwXre+YNWIC+l1WElYiRLZwWytOg=",
   "Source": "Bodie.Promptlet.Web",
   "BasePath": "_content/Bodie.Promptlet.Web",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Highlighter.css"
+    },
+    {
+      "Identity": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Bodie.Promptlet.Web\\wwwroot\\css\\promptcollectiontreeview.css",
+      "SourceId": "Bodie.Promptlet.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Bodie.Promptlet.Web\\wwwroot\\",
+      "BasePath": "_content/Bodie.Promptlet.Web",
+      "RelativePath": "css/promptcollectiontreeview.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\promptcollectiontreeview.css"
     },
     {
       "Identity": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Bodie.Promptlet.Web\\wwwroot\\css\\site.css",
