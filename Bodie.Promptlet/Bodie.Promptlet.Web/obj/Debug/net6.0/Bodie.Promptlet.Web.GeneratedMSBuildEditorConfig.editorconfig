@@ -59,6 +59,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGVQcm9tcHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/ImportExport/ImportCsvPromptlets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1wb3J0RXhwb3J0XEltcG9ydENzdlByb21wdGxldHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/derek/source/repos/Promptlet/Bodie.Promptlet/Bodie.Promptlet.Web/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

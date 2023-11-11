@@ -12,8 +12,12 @@ namespace Bodie.Promptlet.Web.Pages
 
         [BindProperty]
         public ComposedPromptlet ComposedPromptlet { get; set; }
+
         [BindProperty]
         public List<PromptletArtifact> PromptletArtifacts { get; set; }
+
+        [BindProperty]
+        public List<PromptCollection> PromptCollections { get; set; }
 
         public EditComposedPromptletModel(PromptletContext promptletContext)
         {
@@ -23,18 +27,23 @@ namespace Bodie.Promptlet.Web.Pages
         public async Task<IActionResult> OnGetAsync(int? id = 1)
         {
             if (id != null)
-            {
+            {   
                 ComposedPromptlet = await _promptletContext.ComposedPromplets
                     .Include("PromptletArtifacts")
+                    .Include("PromptCollections")
                     .AsNoTracking()
                     .FirstOrDefaultAsync(m => m.ComposedPromptletId == id);
+
+                PromptCollections = ComposedPromptlet.PromptCollections.ToList();
+                PromptletArtifacts = ComposedPromptlet.PromptletArtifacts.ToList();
+
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var composedPromptlet = ComposedPromptlet;
+           // var composedPromptlet = ComposedPromptlet;
 
 
             var existingComposedPromptletEntity = await _promptletContext.Set<ComposedPromptlet>()
@@ -45,25 +54,23 @@ namespace Bodie.Promptlet.Web.Pages
             if (existingComposedPromptletEntity != null)
             {
 
-                //order, id
-                var origOrder = new Dictionary<int, int>();
-
-                foreach (var artifact in existingComposedPromptletEntity.PromptletArtifacts)
-                {
-                    origOrder.Add(artifact.PromptletArtifactOrder, artifact.PromptletArtifactId);
-                }
-
                 var artifactCollection = new Dictionary<string, string>();
+                var promptCollection = new Dictionary<string, string>();
 
                 foreach (var entry in Request.Form)
                 {
-                    if (!entry.Key.StartsWith("_"))//&& !entry.Key.Contains(nameof(ComposedPromptlet)))
+                    if (!entry.Key.StartsWith("_"))
                     {
                         artifactCollection.Add(entry.Key, entry.Value.ToString() ?? "");
+                    }
+                    if (entry.Key.Contains(nameof(ComposedPromptlet)))
+                    {
+                        promptCollection.Add(entry.Key, entry.Value.ToString() ?? "");
                     }
                 }
 
                 var orderedArtifactIdArray = artifactCollection["PromptletArtifactId"].Split(",").ToArray();
+
                 //order, id
                 var updatedOrder = new Dictionary<int, int>();
                 for (int i = 0; i <= orderedArtifactIdArray.Length - 1; i++)
@@ -79,12 +86,20 @@ namespace Bodie.Promptlet.Web.Pages
                     {
                         _promptletContext.Entry<PromptletArtifact>(artifact).CurrentValues.SetValues(artifact.PromptletArtifactOrder);
                     }
+                }
 
-
+                if(Int32.TryParse(promptCollection["ComposedPromptlet.ComposedPromptletVersion"], out int ver))
+                {
+                    existingComposedPromptletEntity.ComposedPromptletVersion = ver;
                 }
 
 
+                existingComposedPromptletEntity.ComposedPromptletName = promptCollection["ComposedPromptlet.ComposedPromptletName"];
+                existingComposedPromptletEntity.ComposedPromptletDescription = promptCollection["ComposedPromptlet.ComposedPromptletDescription"];
+                existingComposedPromptletEntity.ComposedPromptletHeader = promptCollection["ComposedPromptlet.ComposedPromptletHeader"];
+                existingComposedPromptletEntity.ComposedPromptletFooter = promptCollection["ComposedPromptlet.ComposedPromptletFooter"];
 
+     
             }
 
             if (!ModelState.IsValid)
@@ -92,13 +107,7 @@ namespace Bodie.Promptlet.Web.Pages
                 return Page();
             }
 
-            existingComposedPromptletEntity.ComposedPromptletVersion += 1;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletName).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletDescription).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletHeader).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletFooter).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.ComposedPromptletVersion).IsModified = true;
-            //_promptletContext.Entry(existingComposedPromptletEntity).Property(x => x.PromptletArtifacts).IsModified = true;
+
             await _promptletContext.SaveChangesAsync();
 
             return RedirectToPage("AllComposedPromptlet");

@@ -1,0 +1,35 @@
+﻿@page "id:int"
+@using Bodie.Promptlet.Web.Pages.ImportExport
+@model ImportCsvPromptletsModel
+@{
+}
+
+
+@section Scripts{
+    <script>
+    
+    </script>
+}
+<form method="post">
+<div class="container bg-light rounded shadow box-shadow p-3">
+    <div class="row p-2">      
+        <div class="col-12">
+            <label for="importPromptCollection">Import CSV:</label>
+            <input type="file" class="form-control" id="importPromptCollection" />
+                           <div class="row-cols-md-1 p-3">
+                                  @Html.TextAreaFor(model => model.ImportString
+                                    , new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+            <input type="submit" class="btn btn-outline-dark" value="Submit" />
+        </div>
+    </div>
+        <div class="row p-2">      
+            <div class="col-12">
+    @*        <a class="btn btn-secondary" id="exportPromptCollection" >Export CSV</a>*@
+            <p class="form-text">
+                @Model.ExportString
+            </p>
+            </div>
+         </div>
+    </div>
+    </form>

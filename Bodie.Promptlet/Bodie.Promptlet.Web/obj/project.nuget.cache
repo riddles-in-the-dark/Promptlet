@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Luev+1+XalyqjmR0CsjUABEJ0Gy2/KoL5SqUbJ1b8o1cdbzfzaJ4/buQwlbj+u9HYs2zoaGu99+HsLz5PBxvaQ==",
+  "dgSpecHash": "dba5oJzrww9RC44UV43FfTwoq3zw7IFM/tF/ZPp3VevfItTVmVhmH4l1ADLMoXxeW9HinAbPnpiEkQEx16e+UQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Bodie.Promptlet.Web\\Bodie.Promptlet.Web.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\derek\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\derek\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\derek\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\derek\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\derek\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\derek\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\derek\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",

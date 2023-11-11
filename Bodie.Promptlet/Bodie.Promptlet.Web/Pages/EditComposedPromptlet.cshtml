@@ -14,10 +14,20 @@
     </script>
 }
 <div>
-    <span  
-        style="font-family: sans-serif; color:cadetblue" 
-        class="h5 p-2">Composed Promptlet for @Model.ComposedPromptlet.ComposedPromptletName
-    </span>
+    <h5  style="font-family: sans-serif; color:cadetblue" class="h5 p-2">
+        @if(@Model.PromptCollections.Count>1)
+        {
+            <label>Prompt Collections:</label>
+        }
+        else
+        {
+             <label>Prompt Collection:</label>
+        }
+        @foreach (var coll in @Model.PromptCollections)
+        {
+            <span class="p-2">@coll.PromptCollectionName</span>
+        }
+    </h5>
     <form method="post">
         <input asp-for="ComposedPromptlet.ComposedPromptletId" type="hidden" />
         <div class="container text-left bg-light rounded shadow box-shadow p-3">
@@ -25,12 +35,12 @@
                     <div class="row p-2">
                         @*Composed Promptlet Name*@
                         <div class="col-md-10"> 
-                            <div class="form-floating mb-3" >
+                            <div class="form-floating">
                                 @Html.EditorFor(model => model.ComposedPromptlet.ComposedPromptletName
                                 , new { htmlAttributes = new { 
                                     @class = "form-control", 
                                     @placeholder="ComposedPromptletName" } })
-                                <label class="form-label" 
+                                <label class="floating-label" 
                                 for="ComposedPromptlet_ComposedPromptletName">
                                 Name</label>
                             </div>
@@ -42,7 +52,7 @@
                                 , new { htmlAttributes = new { 
                                     @class = "form-control", 
                                     @placeholder="ComposedPromptletVersion" } })
-                                <label class="form-label" 
+                                <label class="floating-label" 
                                 for="ComposedPromptlet_ComposedPromptletVersion">
                                 Version</label>
                             </div>
@@ -51,17 +61,21 @@
                      @*Row Two - Description*@
                     <div class="row p-2">
                         <div class="row-cols-md-1">
-                            <h5 class="form-label">Description</h5>  
-                            @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletDescription
-                                ,2 ,2 , new { htmlAttributes = new { @class = "form-control" } })
+                            <div class="input-container form-floating">
+                                 @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletDescription
+                                , new {@class = "form-control",@placeholder="ComposedPromptletDescription",@style="height: 100px"})
+                                <label class="floating-label" for="ComposedPromptlet_ComposedPromptletDescription">Description</label>
+                            </div>
                         </div>
                     </div>
                     @*Row Three - Header and Artifacts*@
                     <div class="row p-2">
                         <div class="row-cols-md-1">
-                           <h5 class="form-label">Header</h5>
-                            @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletHeader
-                                   ,5 ,3 , new { htmlAttributes = new { @class = "form-control" } })                  
+                            <div class="input-container form-floating">
+                                 @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletHeader
+                                , new {@class = "form-control",@placeholder="ComposedPromptletHeader",@style="height: 100px"})
+                                <label class="floating-label" for="ComposedPromptlet_ComposedPromptletHeader">Header</label>
+                            </div>
                       <hr/>                      
                         <h2 style="color:#1ea696;" >Artifacts
                             <a asp-page="./AddPromptletArtifact"                                
@@ -74,20 +88,20 @@
                             </a> 
                          </h2>
                          <h6 class="text-muted"> Drag and Drop to Reorder</h6>
-                        <div class="container bg-light p-3  rounded-3 box-shadow ">
+                        <div class="container bg-light p-1  rounded-3 box-shadow ">
                             <ul id="sortlist" >
-                                @foreach (var item in Model.ComposedPromptlet.PromptletArtifacts.OrderBy(x=>x.PromptletArtifactOrder))
+                                @foreach (var item in Model.PromptletArtifacts.OrderBy(x=>x.PromptletArtifactOrder))
                                 {
-                                    <li class="rounded rounded-pill shadow box-shadow">  
+                                    <li class="rounded pill shadow box-shadow">  
                                         @Html.HiddenFor(model=>model.ComposedPromptlet.PromptletArtifacts.FirstOrDefault(x=>x.PromptletArtifactId.Equals(item.PromptletArtifactId)).PromptletArtifactId)
                                         @Html.HiddenFor(model=>model.ComposedPromptlet.PromptletArtifacts.FirstOrDefault(x=>x.PromptletArtifactId.Equals(item.PromptletArtifactId)).PromptletArtifactOrder)
                                         @Html.HiddenFor(model=>model.ComposedPromptlet.PromptletArtifacts.FirstOrDefault(x=>x.PromptletArtifactId.Equals(item.PromptletArtifactId)).PromptletArtifactName)
-                                        <div class="my-3 p-3 ">
+                                        <div class="my-3 p-1 ">
                                             <div class="row">     
                                                 <div class="row">                                                      
                                                   <h6 class="mb-0">
                                                       <div class="row align-bottom">
-                                                          <div class="col-sm-9 border-bottom border-gray mb-0">
+                                                          <div class="col-sm-9 border-bottom border-gray mb-0" style="font-size:medium;">
                                                               <span data-idorder="@string.Concat(@item.PromptletArtifactId,",",@item.PromptletArtifactOrder)" style="color:teal" class="font-monospace h5">
                                                             @Html.DisplayFor(modelItem => item.PromptletArtifactOrder))
                                                             @Html.DisplayFor(modelItem => item.PromptletArtifactName)
@@ -115,7 +129,7 @@
                                                  <div class="row border-bottom border-light">
                                                      <div class="col-1"></div>
                                                      <div class="col-11">
-                                                         <span style="color:GrayText" 
+                                                         <span style="color:GrayTex; font-size:smaller;" 
                                                          class="media-body pb-1 mb-0 small h-100 ">
                                                          <i>@Html.DisplayFor(modelItem => item.PromptletArtifactDescription)
                                                          </i>
@@ -123,7 +137,7 @@
                                                     </div>
                                                  </div>
                                                 <div class="row">
-                                                    <div class="media text-muted mb-0">
+                                                    <div class="media text-muted mb-0" style="font-size:small;">
                                                         @Html.DisplayFor(modelItem =>item.PromptletArtifactContent)
                                                     </div>
                                                 </div>
@@ -135,9 +149,11 @@
                             <div class="border-bottom border-gray p-2 m-2 ">                   
                             </div>
                             <div class="row-cols-md-1">
-                                <h4 class="form-label" >Footer</h4>
-                                    @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletFooter
-                                    ,5 ,3 , new { htmlAttributes = new { @class = "form-control col" } })
+                            <div class="input-container form-floating">
+                                 @Html.TextAreaFor(model => model.ComposedPromptlet.ComposedPromptletFooter
+                                , new {@class = "form-control",@placeholder="ComposedPromptletFooter",@style="height: 100px"})
+                                <label class="floating-label" for="ComposedPromptlet_ComposedPromptletFooter">Footer</label>
+                            </div>
                             </div>
                         </div>
                     </div>
