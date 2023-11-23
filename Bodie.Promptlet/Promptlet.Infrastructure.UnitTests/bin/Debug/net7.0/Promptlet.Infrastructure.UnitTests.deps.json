@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Promptlet.Infrastructure.UnitTests/1.0.0": {
         "dependencies": {
+          "Bodie.Promptlet.Infrastructure": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.7.1",
           "Moq": "4.20.69",
           "NUnit": "3.13.3",
@@ -971,6 +972,15 @@
           }
         }
       },
+      "Bodie.Promptlet.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13"
+        },
+        "runtime": {
+          "Bodie.Promptlet.Infrastructure.dll": {}
+        }
+      },
       "Promptlet.Infrastructure/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.13",
@@ -1514,6 +1524,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Bodie.Promptlet.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Promptlet.Infrastructure/1.0.0": {
       "type": "project",

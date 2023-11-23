@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bodie.Promptlet.Infrastructure\Bodie.Promptlet.Infrastructure.csproj" />
     <ProjectReference Include="..\Promptlet.Infrastructure\Promptlet.Infrastructure.csproj" />
   </ItemGroup>
 

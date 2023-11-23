@@ -155,6 +155,11 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\De
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.RazorAssemblyInfo.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.RazorAssemblyInfo.cs
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.Bodie.Promptlet.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Bodie.Promptlet.Web.props
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Bodie.Promptlet.Web.props
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Bodie.Promptlet.Web.props
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
@@ -166,8 +171,3 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\De
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.pdb
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.genruntimeconfig.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\ref\Bodie.Promptlet.Web.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.Bodie.Promptlet.Web.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Bodie.Promptlet.Web.props
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Bodie.Promptlet.Web.props
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Bodie.Promptlet.Web.props
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\staticwebassets.pack.json

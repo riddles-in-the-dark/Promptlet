@@ -9,80 +9,67 @@ namespace Promptlet.Domain.UnitTests.ServiceTests
     [TestFixture]
     internal class PromptletCollectionServiceTests
     {
+        private PromptletCollection promptletCollection = PromptletCollectionGenerator.GeneratePromptletCollections(1).First();
+        private List<PromptletCollection> promptletCollections = PromptletCollectionGenerator.GeneratePromptletCollections(5).ToList();
+        private PromptletCollectionService _service;
+        private Mock<IPromptletCollectionRepository> _repository;
+
+        [SetUp]
+        public void Setup() 
+        {
+            _repository = new Mock<IPromptletCollectionRepository>();
+            _repository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(promptletCollection);
+            _repository.Setup(x => x.GetAll()).ReturnsAsync(promptletCollections);
+            _repository.Setup(x => x.Create(promptletCollection)).ReturnsAsync(promptletCollection);
+            _repository.Setup(x => x.Update(promptletCollection)).ReturnsAsync(promptletCollection);
+
+            _service = new PromptletCollectionService(_repository.Object);            
+        }
+
         [Test]
         public async Task PromptletCollectionGetByIdTestAsync()
         {
+            var serviceResponse = await _service.GetById(promptletCollection.PromptletCollectionId);
             
-            var mockPromptletCollectionRepository = new Mock<IPromptletCollectionRepository>();
-
-            var promptletCollectionDomainService = new PromptletCollectionService(mockPromptletCollectionRepository.Object);
-
-            var expectedPromptCollection = PromptletCollectionGenerator.GeneratePromptletCollections(1).First();
-
-            mockPromptletCollectionRepository
-                .Setup(x => x.GetById(It.IsAny<int>()))
-                .ReturnsAsync(expectedPromptCollection);
-
-            var serviceResponse = await promptletCollectionDomainService.GetById(expectedPromptCollection.PromptletCollectionId);
-
-           Assert.That(serviceResponse.PromptletCollectionId, Is.EqualTo(expectedPromptCollection.PromptletCollectionId));
- 
+            Assert.IsNotNull(serviceResponse);
+            Assert.That(serviceResponse.PromptletCollectionId, Is.EqualTo(promptletCollection.PromptletCollectionId)); 
         }
 
         [Test]
         public async Task PromptletCollectionGetAll()
         {
+            var serviceResponse = await _service.GetAll();
 
-            var mockPromptletCollectionRepository = new Mock<IPromptletCollectionRepository>();
-            var promptletCollectionDomainService = new PromptletCollectionService(mockPromptletCollectionRepository.Object);
-
-            var expectedPromptCollection = PromptletCollectionGenerator.GeneratePromptletCollections(5).ToList();
-
-            mockPromptletCollectionRepository
-                .Setup(x => x.GetAll())
-                .ReturnsAsync(expectedPromptCollection);
-
-            var serviceResponse = await promptletCollectionDomainService.GetAll();
-
-            CollectionAssert.AreEquivalent(expectedPromptCollection, serviceResponse);
+            CollectionAssert.AllItemsAreNotNull(serviceResponse);
+            CollectionAssert.AreEquivalent(promptletCollections, serviceResponse);
         }
 
         [Test]
         public async Task PromptletCollectionCreate()
         {
-            //Arrange - mock the promptlet collection repository
-            var mockPromptletCollectionRepository = new Mock<IPromptletCollectionRepository>();
+            var serviceResponse = await _service.Create(promptletCollection);
 
-            //Arrange - get a test promptlet collection
-            var expectedPromptCollection = PromptletCollectionGenerator.GeneratePromptletCollections(1).First();
-
-            //Arrange - setup the mock promptlet collection repository to return the expectedPromptCollection
-            //when Create is called with the expectedPromptCollection as a parameter
-            mockPromptletCollectionRepository
-                        .Setup(x => x.Create(expectedPromptCollection))
-                        .ReturnsAsync(expectedPromptCollection);
-
-            //Arrange - initialize a promptlet collection domain service instance with the mocked promptlet collection repository
-            var promptletCollectionDomainService = new PromptletCollectionService(mockPromptletCollectionRepository.Object);
-      
-            // Act
-            var createdPromptletCollection = await promptletCollectionDomainService.Create(expectedPromptCollection);
-
-            // Assert
-            Assert.NotNull(createdPromptletCollection);
-            Assert.AreEqual(expectedPromptCollection, createdPromptletCollection);
-            mockPromptletCollectionRepository.Verify(x => x.Create(expectedPromptCollection), Times.Once);
+            Assert.NotNull(serviceResponse);
+            Assert.AreEqual(serviceResponse, promptletCollection);
+            _repository.Verify(x => x.Create(promptletCollection), Times.Once);
         }
 
         [Test]
         public async Task PromptCollectionUpdate()
         {
+            var serviceResponse = await _service.Update(promptletCollection);
 
+            Assert.NotNull(serviceResponse);
+            Assert.AreEqual(serviceResponse, promptletCollection);
+            _repository.Verify(x => x.Update(promptletCollection), Times.Once);
         }
+
         [Test]
         public async Task PromptCollectionGetDelete()
         {
+            var serviceResponse = _service.Delete(promptletCollection);
 
+            _repository.Verify(x => x.Delete(promptletCollection), Times.Once);
         }
     }
 

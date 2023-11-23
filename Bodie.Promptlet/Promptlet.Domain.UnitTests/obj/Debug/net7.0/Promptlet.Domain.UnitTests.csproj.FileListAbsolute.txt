@@ -1,9 +1,4 @@
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\CoverletSourceRootsMapping
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.csproj.AssemblyReference.cache
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.AssemblyInfoInputs.cache
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.AssemblyInfo.cs
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.csproj.CoreCompileInputs.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\testhost.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\testhost.exe
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\NUnit3.TestAdapter.dll
@@ -154,6 +149,11 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\Promptlet.Infrastructure.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\Promptlet.Domain.pdb
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\bin\Debug\net7.0\Promptlet.Infrastructure.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.csproj.AssemblyReference.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.AssemblyInfoInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.AssemblyInfo.cs
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.csproj.CoreCompileInputs.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.csproj.CopyComplete
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\Promptlet.Domain.UnitTests.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain.UnitTests\obj\Debug\net7.0\refint\Promptlet.Domain.UnitTests.dll

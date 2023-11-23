@@ -1,3 +1,4 @@
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\appsettings.json
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Promptlet.Console.exe
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Promptlet.Console.deps.json
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Promptlet.Console.runtimeconfig.json
@@ -16,8 +17,13 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debu
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Json.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Logging.Configuration.dll
@@ -68,9 +74,3 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\obj\Debu
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\obj\Debug\net7.0\Promptlet.Console.pdb
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\obj\Debug\net7.0\Promptlet.Console.genruntimeconfig.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\obj\Debug\net7.0\ref\Promptlet.Console.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Json.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Console\bin\Debug\net7.0\appsettings.json
