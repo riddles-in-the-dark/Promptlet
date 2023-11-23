@@ -6,7 +6,7 @@ namespace Promptlet.Infrastructure.Models
     public partial class PromptletArtifact
     {
         public int PromptletArtifactId { get; set; }
-        public long PromptletArtifactOrder { get; set; }
+        public int PromptletArtifactOrder { get; set; }
         public string? PromptletArtifactName { get; set; }
         public string? PromptletArtifactContent { get; set; }
         public string? VariableStartDeliminator { get; set; }

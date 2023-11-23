@@ -4,6 +4,7 @@ using Promptlet.Infrastructure.Models;
 
 namespace Promptlet.Infrastructure.UnitTests.RepositoryTests
 {
+    [TestFixture]
     internal class PromptletCollectionRepositoryTests
     {
         private PromptletCollection promptletCollection = PromptletCollectionGenerator.GeneratePromptletCollections(1).First();
@@ -56,6 +57,5 @@ namespace Promptlet.Infrastructure.UnitTests.RepositoryTests
             CollectionAssert.AllItemsAreNotNull(repositoryResponse);
             CollectionAssert.AreEquivalent(promptletCollections, repositoryResponse);
         }
-
     }
 }

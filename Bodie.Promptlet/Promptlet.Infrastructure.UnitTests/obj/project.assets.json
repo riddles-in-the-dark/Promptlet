@@ -1511,20 +1511,6 @@
           }
         }
       },
-      "Bodie.Promptlet.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.12",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12"
-        },
-        "compile": {
-          "bin/placeholder/Bodie.Promptlet.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bodie.Promptlet.Infrastructure.dll": {}
-        }
-      },
       "Promptlet.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -4057,11 +4043,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Bodie.Promptlet.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../Bodie.Promptlet.Infrastructure/Bodie.Promptlet.Infrastructure.csproj",
-      "msbuildProject": "../Bodie.Promptlet.Infrastructure/Bodie.Promptlet.Infrastructure.csproj"
-    },
     "Promptlet.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../Promptlet.Infrastructure/Promptlet.Infrastructure.csproj",
@@ -4070,7 +4051,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Bodie.Promptlet.Infrastructure >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
       "Moq >= 4.20.69",
       "NUnit >= 3.13.3",
@@ -4107,9 +4087,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Bodie.Promptlet.Infrastructure\\Bodie.Promptlet.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Bodie.Promptlet.Infrastructure\\Bodie.Promptlet.Infrastructure.csproj"
-            },
             "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj"
             }
