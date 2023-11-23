@@ -1,0 +1,237 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain.UnitTests\\Promptlet.Domain.UnitTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain.UnitTests\\Promptlet.Domain.UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain.UnitTests\\Promptlet.Domain.UnitTests.csproj",
+        "projectName": "Promptlet.Domain.UnitTests",
+        "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain.UnitTests\\Promptlet.Domain.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain.UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\derek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj": {
+                "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.6.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj",
+        "projectName": "Promptlet.Domain",
+        "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj",
+        "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\derek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj",
+        "projectName": "Promptlet.Infrastructure",
+        "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\Promptlet.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\derek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

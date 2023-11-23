@@ -28,7 +28,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
       DbInitializer.Initialize(context);
 }
-app.UseStaticFiles();
+app.UseStaticFiles();   
 
 app.UseRouting();
 

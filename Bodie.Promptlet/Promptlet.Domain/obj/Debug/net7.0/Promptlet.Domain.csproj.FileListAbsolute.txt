@@ -1,0 +1,15 @@
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\bin\Debug\net7.0\Promptlet.Domain.deps.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\bin\Debug\net7.0\Promptlet.Domain.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\bin\Debug\net7.0\Promptlet.Domain.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\bin\Debug\net7.0\Promptlet.Infrastructure.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\bin\Debug\net7.0\Promptlet.Infrastructure.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.csproj.AssemblyReference.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.AssemblyInfoInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.AssemblyInfo.cs
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.csproj.CoreCompileInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.csproj.CopyComplete
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\refint\Promptlet.Domain.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\Promptlet.Domain.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Domain\obj\Debug\net7.0\ref\Promptlet.Domain.dll
