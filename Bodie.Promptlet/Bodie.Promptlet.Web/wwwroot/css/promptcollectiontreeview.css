@@ -14,17 +14,18 @@
 
     .treeview li {
         box-shadow:inherit;
-        padding: 10px;
+        padding: 2px;
         border-radius: 5px;
         background-color: #eee;
         margin-bottom: 5px;
     }
 
         .treeview li:hover {
-            background-color: #ddd;
+            background-color: transparent;
             transition:ease-in-out 1s;
             cursor: pointer;
         }
+
 
         .treeview li::marker {
             display: none;
@@ -32,7 +33,7 @@
 
         .treeview li a {
             text-decoration: none;
-            color: #333;
+            color: gray;
         }
 
         .treeview li ul {
@@ -52,6 +53,7 @@
 
 /* (X) DOES NOT MATTER */
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    
+        font-family:  sans-serif;
     box-sizing: border-box;
 }

@@ -19,8 +19,7 @@
     function(e){
         if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.getData) {
             e.preventDefault();
-            e.stopPropagation();
-            
+            e.stopPropagation();            
             alert(data('msg'));
         }
     }
@@ -28,15 +27,17 @@
   
     </script>
 }
-
-<div class="container bg-dark rounded shadow box-shadow p-2">
+<h5 style="font-family: sans-serif; color:cadetblue" class="h5 p-2">
+        <span class="p-2">Promptlet Collections</span>
+</h5>
+<div class="container bg-light rounded shadow box-shadow p-2 m-1">
     <div class="row">
         <ul class="treeview">
             @foreach(var promptCollection in @Model.PromptCollections)
             {
               <li class="dropdown">
                    <div class="dropdown-header">
-                        <h3 style="color:#1ea696">
+                        <h4 style="color:#1ea696">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
                                 <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
                             </svg>
@@ -50,7 +51,7 @@
                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                               </svg>
                          </a>
-                        </h3>
+                        </h4>
                     </div>
                     <ul>
                          @foreach(var pmpt in @promptCollection.ComposedPromptlets)
