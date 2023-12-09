@@ -1192,6 +1192,16 @@
           }
         }
       },
+      "Promptlet.Api.Dto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Promptlet.Api.Dto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Promptlet.Api.Dto.dll": {}
+        }
+      },
       "Promptlet.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3437,6 +3447,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Promptlet.Api.Dto/1.0.0": {
+      "type": "project",
+      "path": "../Promptlet.Api.Dto/Promptlet.Api.Dto.csproj",
+      "msbuildProject": "../Promptlet.Api.Dto/Promptlet.Api.Dto.csproj"
+    },
     "Promptlet.Domain/1.0.0": {
       "type": "project",
       "path": "../Promptlet.Domain/Promptlet.Domain.csproj",
@@ -3451,6 +3466,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.OpenApi >= 7.0.13",
+      "Promptlet.Api.Dto >= 1.0.0",
       "Promptlet.Domain >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -3482,6 +3498,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Api.Dto\\Promptlet.Api.Dto.csproj": {
+              "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Api.Dto\\Promptlet.Api.Dto.csproj"
+            },
             "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj": {
               "projectPath": "C:\\Users\\derek\\source\\repos\\Promptlet\\Bodie.Promptlet\\Promptlet.Domain\\Promptlet.Domain.csproj"
             }

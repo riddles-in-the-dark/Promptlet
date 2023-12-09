@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Promptlet.Api.Dto\Promptlet.Api.Dto.csproj" />
     <ProjectReference Include="..\Promptlet.Domain\Promptlet.Domain.csproj" />
   </ItemGroup>
 

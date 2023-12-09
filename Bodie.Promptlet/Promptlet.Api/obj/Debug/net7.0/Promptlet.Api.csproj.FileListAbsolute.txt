@@ -73,3 +73,5 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api\obj\Debug\ne
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api\obj\Debug\net7.0\Promptlet.Api.pdb
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api\obj\Debug\net7.0\Promptlet.Api.genruntimeconfig.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api\obj\Debug\net7.0\ref\Promptlet.Api.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api\bin\Debug\net7.0\Promptlet.Api.Dto.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api\bin\Debug\net7.0\Promptlet.Api.Dto.pdb

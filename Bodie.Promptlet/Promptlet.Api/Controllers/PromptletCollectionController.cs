@@ -20,6 +20,7 @@ namespace Promptlet.Api.Controllers
         }
 
         [HttpGet(Name = "GetPromptletCollections")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IEnumerable<PromptletCollection>> Get()
         {
             var obj = await _domainService.GetAll();
@@ -27,6 +28,7 @@ namespace Promptlet.Api.Controllers
         }
 
         [HttpPut(Name = "UpdatePromptletCollection")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<PromptletCollection> Put(UpdatePromptletCollectionRequest request)
         {
             var obj = await _domainService.Update(
@@ -40,6 +42,7 @@ namespace Promptlet.Api.Controllers
         }
 
         [HttpPost(Name = "CreatePromptletCollection")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<PromptletCollection> Post(CreatePromptletCollectionRequest request)
         {
             var obj = await _domainService.Create(

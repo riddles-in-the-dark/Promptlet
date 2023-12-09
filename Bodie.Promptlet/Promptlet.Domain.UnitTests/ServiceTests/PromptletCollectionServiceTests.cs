@@ -9,8 +9,8 @@ namespace Promptlet.Domain.UnitTests.ServiceTests
     [TestFixture]
     internal class PromptletCollectionServiceTests
     {
-        private PromptletCollection promptletCollection = PromptletCollectionGenerator.GeneratePromptletCollections(1).First();
-        private List<PromptletCollection> promptletCollections = PromptletCollectionGenerator.GeneratePromptletCollections(5).ToList();
+        private PromptletCollection promptletCollection = PromptletCollectionGenerator.GeneratePromptletCollections(1, false).First();
+        private List<PromptletCollection> promptletCollections = PromptletCollectionGenerator.GeneratePromptletCollections(5, false).ToList();
         private PromptletCollectionService _service;
         private Mock<IPromptletCollectionRepository> _repository;
 

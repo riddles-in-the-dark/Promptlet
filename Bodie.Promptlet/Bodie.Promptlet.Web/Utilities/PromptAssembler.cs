@@ -40,6 +40,8 @@ namespace Bodie.Promptlet.Web.Utilities
             return returnValue;
         }
 
+
+
         //public static string AsseembleRawPromptFromParts(PromptParts promptParts)
         //{
         //    var bufferBuilder = new StringBuilder();

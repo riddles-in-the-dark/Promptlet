@@ -9,6 +9,7 @@
       "Promptlet.Api/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "7.0.13",
+          "Promptlet.Api.Dto": "1.0.0",
           "Promptlet.Domain": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -590,6 +591,11 @@
           }
         }
       },
+      "Promptlet.Api.Dto/1.0.0": {
+        "runtime": {
+          "Promptlet.Api.Dto.dll": {}
+        }
+      },
       "Promptlet.Domain/1.0.0": {
         "dependencies": {
           "Promptlet.Infrastructure": "1.0.0"
@@ -1085,6 +1091,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Promptlet.Api.Dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Promptlet.Domain/1.0.0": {
       "type": "project",

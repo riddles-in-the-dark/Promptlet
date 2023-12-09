@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddPrompletContext(builder.Configuration.GetConnectionString("PrompletContext") ?? throw new ArgumentNullException("Connection string not found."));
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -28,7 +29,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
       DbInitializer.Initialize(context);
 }
-app.UseStaticFiles();   
+app.UseStaticFiles();
 
 app.UseRouting();
 

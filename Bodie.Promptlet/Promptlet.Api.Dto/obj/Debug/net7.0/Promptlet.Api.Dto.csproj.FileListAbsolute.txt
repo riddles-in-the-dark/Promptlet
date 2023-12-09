@@ -1,0 +1,11 @@
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\bin\Debug\net7.0\Promptlet.Api.Dto.deps.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\bin\Debug\net7.0\Promptlet.Api.Dto.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\bin\Debug\net7.0\Promptlet.Api.Dto.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\Promptlet.Api.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\Promptlet.Api.Dto.AssemblyInfoInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\Promptlet.Api.Dto.AssemblyInfo.cs
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\Promptlet.Api.Dto.csproj.CoreCompileInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\Promptlet.Api.Dto.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\refint\Promptlet.Api.Dto.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\Promptlet.Api.Dto.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Dto\obj\Debug\net7.0\ref\Promptlet.Api.Dto.dll

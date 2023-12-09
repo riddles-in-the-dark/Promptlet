@@ -13,6 +13,8 @@ namespace Bodie.Promptlet.Web.Pages
 
        public ICollection<PromptCollection> PromptCollections;
 
+
+
         public void OnGet()
         {
            PromptCollections = _promptletContext.PromptCollections.Include("ComposedPromptlets").ToList();
