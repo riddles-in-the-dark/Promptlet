@@ -22,7 +22,7 @@ namespace Promptlet.Domain.UnitTests
                     artifactContent = artifactContent
                         .Replace("[", startDelim)
                         .Replace("]", endDelim);
-                }
+                }                
 
                 prompts[i] = new PromptletArtifact
                 {
@@ -48,9 +48,9 @@ namespace Promptlet.Domain.UnitTests
         {
             var contents = new string[] 
             {
-            "Analyze the given [language] code for code smells and suggest improvements: [code snippet]",
-            "Identify design flaws in the given [language] code and suggest improvements: [code snippet]",
-            "Detect performance bottlenecks in the given [language] code and suggest optimizations: [code snippet]"
+            "Analyze the given [language] code for code smells and suggest improvements: [code snippet] [LinkedPromptlet(1,2)]",
+            "Identify design flaws in the given [language] code and suggest improvements: [code snippet]  [LinkedPromptlet(1,2)]",
+            " [LinkedPromptlet(1,2)] Detect performance bottlenecks in the given [language] code and suggest optimizations: [code snippet] "
             };
             return contents[StaticRandom.Next(contents.Length)];
         }

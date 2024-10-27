@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "arPJrWYAb5HfS2X3lJ78B1SPUKoXevA4JeTi8DK2CIA=",
+  "Source": "Promptlet.Api",
+  "BasePath": "_content/Promptlet.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

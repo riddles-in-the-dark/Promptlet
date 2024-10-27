@@ -26,3 +26,4 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Infrastruc
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Infrastructure\obj\Debug\net6.0\Bodie.Promptlet.Infrastructure.pdb
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Infrastructure\obj\Debug\net6.0\Bodie.Promptlet.Infrastructure.genruntimeconfig.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Infrastructure\obj\Debug\net6.0\ref\Bodie.Promptlet.Infrastructure.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Infrastructure\obj\Debug\net6.0\Bodie.Promptlet.Infrastructure.sourcelink.json

@@ -1,0 +1,16 @@
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\bin\Debug\net8.0\Promptlet.Api.Client.deps.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\bin\Debug\net8.0\Promptlet.Api.Client.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\bin\Debug\net8.0\Promptlet.Api.Client.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\bin\Debug\net8.0\Promptlet.Api.Dto.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\bin\Debug\net8.0\Promptlet.Api.Dto.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.csproj.AssemblyReference.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.AssemblyInfoInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.AssemblyInfo.cs
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.csproj.CoreCompileInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.sourcelink.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.csproj.CopyComplete
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\refint\Promptlet.Api.Client.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\Promptlet.Api.Client.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Api.Client\obj\Debug\net8.0\ref\Promptlet.Api.Client.dll

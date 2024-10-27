@@ -1,0 +1,15 @@
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\bin\Debug\net8.0\Promptlet.Infrastructure.deps.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\bin\Debug\net8.0\Promptlet.Infrastructure.runtimeconfig.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\bin\Debug\net8.0\Promptlet.Infrastructure.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\bin\Debug\net8.0\Promptlet.Infrastructure.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.AssemblyInfo.cs
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.sourcelink.json
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\refint\Promptlet.Infrastructure.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.pdb
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\Promptlet.Infrastructure.genruntimeconfig.cache
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Promptlet.Infrastructure\obj\Debug\net8.0\ref\Promptlet.Infrastructure.dll

@@ -14,4 +14,11 @@ namespace Promptlet.Infrastructure.Models
         public virtual ICollection<PromptletCollection>? PromptletCollections { get; set; }
 
     }
+
+    public partial class VariableCollection
+    {
+       public Dictionary<string, string>? ExtractedVariables { get; set; } = new ();
+        public Dictionary<string, string>? StringReplacementVariables { get; set; } = new ();
+        public Dictionary<string, string>? NestedVariables { get; set; } = new();
+    }
 }

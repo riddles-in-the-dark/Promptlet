@@ -171,3 +171,4 @@ C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\De
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.pdb
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.genruntimeconfig.cache
 C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\ref\Bodie.Promptlet.Web.dll
+C:\Users\derek\source\repos\Promptlet\Bodie.Promptlet\Bodie.Promptlet.Web\obj\Debug\net6.0\Bodie.Promptlet.Web.sourcelink.json

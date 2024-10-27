@@ -56,7 +56,7 @@ namespace Promptlet.Domain.UnitTests.ExtensionTests
         public async Task ExtractVariableDictionary_ExpectedBehavior()
         {
             var maxVariableLength = 120;
-            var composedPromptlet = promptletCollectionWithRandomDelims.ComposedPromptlets.FirstOrDefault();          
+            var composedPromptlet = promptletCollection.ComposedPromptlets.FirstOrDefault();          
 
             var variableDictionary = composedPromptlet.ExtractedVariableDictionary(maxVariableLength);
             Assert.IsNotNull(variableDictionary);
@@ -72,7 +72,7 @@ namespace Promptlet.Domain.UnitTests.ExtensionTests
 
             var replacementDictionary = new Dictionary<string,string>();
 
-            foreach (var replacement in variableDictionary) 
+            foreach (var replacement in variableDictionary.StringReplacementVariables) 
             {
                 var replacementKey = replacement.Key;
                 replacementKey = replacementKey.Remove(0, 1);

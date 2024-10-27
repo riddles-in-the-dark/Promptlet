@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promptlet.Infrastructure.Un
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promptlet.Domain.UnitTests", "Promptlet.Domain.UnitTests\Promptlet.Domain.UnitTests.csproj", "{46311763-D315-41FC-8D1A-F8B82840FD6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promptlet.Api.Dto", "Promptlet.Api.Dto\Promptlet.Api.Dto.csproj", "{EE53043D-64B7-43E5-94C1-83D748CF96D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promptlet.Api.Dto", "Promptlet.Api.Dto\Promptlet.Api.Dto.csproj", "{EE53043D-64B7-43E5-94C1-83D748CF96D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promptlet.Api.Client", "Promptlet.Api.Client\Promptlet.Api.Client.csproj", "{3ADAF93C-EA46-4606-AC6D-7E868FFC84D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promptlet.Api.Client", "Promptlet.Api.Client\Promptlet.Api.Client.csproj", "{3ADAF93C-EA46-4606-AC6D-7E868FFC84D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

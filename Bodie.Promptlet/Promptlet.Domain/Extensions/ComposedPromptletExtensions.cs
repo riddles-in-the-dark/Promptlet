@@ -1,4 +1,5 @@
 ﻿using Promptlet.Infrastructure.Models;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Promptlet.Domain.Extensions
@@ -16,7 +17,6 @@ namespace Promptlet.Domain.Extensions
             }
             return bodyPartsBuffer.ToString();
         }     
-
 
         public static string AssemblePromptWithCodeSnippetKey(this ComposedPromptlet composedPromptlet, string codeSnippetKey)
         {
@@ -66,9 +66,9 @@ namespace Promptlet.Domain.Extensions
             return prompt.ToString();
         }
 
-        public static Dictionary<string, string> ExtractedVariableDictionary(this ComposedPromptlet composedPromptlet, int maxVariableLength = 120)
+        public static VariableCollection ExtractedVariableDictionary(this ComposedPromptlet composedPromptlet, int maxVariableLength = 120)
         {
-            var replaceVariableDictionary = new Dictionary<string, string>();
+            var variableCollection = new VariableCollection();
 
             foreach (var item in composedPromptlet.PromptletArtifacts.OrderBy(x => x.PromptletArtifactOrder))
             {
@@ -77,6 +77,7 @@ namespace Promptlet.Domain.Extensions
                 var valueBuilder = new StringBuilder(maxVariableLength);
 
                 var variableStartDelim = item.VariableStartDeliminator.ToCharArray()[0];
+
                 var variableEndDelim = item.VariableEndDeliminator.ToCharArray()[0];
 
                 for (int pos = 0; pos <= inputArray.Length - 1; pos++)
@@ -85,21 +86,131 @@ namespace Promptlet.Domain.Extensions
                     {
                         valueBuilder.Clear();
 
+                        var id = Guid.NewGuid().ToString();
+
                         for (int walk = pos; walk <= pos + maxVariableLength; walk++)
-                        {
+                        {                           
                             valueBuilder.Append(inputArray[walk]);
 
-                            if (inputArray[walk] == variableEndDelim)
-                            {
-                                replaceVariableDictionary.TryAdd(valueBuilder.ToString(), $"{variableStartDelim},{variableEndDelim}");
-                                valueBuilder.Clear();
-                                break;
+                                if (inputArray[walk] == variableEndDelim)
+                                {
+                                    var discoveredVariable = valueBuilder.ToString();
+                                    var discoveredVariableIsNested = DiscoveredVariableIsNested(discoveredVariable);
+                                        if (discoveredVariableIsNested)
+                                        {
+                                            var composedPromptletValues = discoveredVariable.Substring(2, discoveredVariable.Length - 4).Split(',');
+                                            foreach (var value in composedPromptletValues) 
+                                            {
+                                                variableCollection.NestedVariables.TryAdd(value, id);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            variableCollection.StringReplacementVariables.TryAdd(valueBuilder.ToString(), $"{id},{variableStartDelim},{variableEndDelim}");
+                                        }
+                                    valueBuilder.Clear();
+                                    break;
+                                }
                             }
-                        }
                     }
                 }
             }
-            return replaceVariableDictionary;
+            return variableCollection;
         }
+
+        private static bool DiscoveredVariableIsNested(string value) 
+        {
+            var nestedVariableDelimeterPos = value.IndexOf("(");
+            var nestedVariableDescription = value.IndexOf("(") > 0 ? value.Substring(0, nestedVariableDelimeterPos) : "StringReplacement";
+
+            Enum.TryParse<VariableReplacementProviderType>(nestedVariableDescription, out var replacementType);
+
+            IVariableReplacementProvider replacementProvider = Utilities.GetVariableReplacementProvider(replacementType);
+            
+            var trimDelimFromValue = value.Substring(1, value.Length-2);
+
+            return trimDelimFromValue.First().Equals('(') && trimDelimFromValue.Last().Equals(')');
+        }
+
+        private static string[] NonStringReplacementVariableTypes = new string[] { "LinkedPromptlet" };
+
+    }
+
+    public interface IVariableReplacementProvider 
+    {
+        public VariableReplacementProviderType VariableReplacementProviderType { get; init; }
+        public string GetVariableReplacement(string[] args);
+    }
+
+    public class LinkedPromptletProvider : IVariableReplacementProvider
+    {
+        public VariableReplacementProviderType VariableReplacementProviderType { get; init; } = VariableReplacementProviderType.LinkedPromptlet;
+        public string GetVariableReplacement(string[] args)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class StringReplacementProvider : IVariableReplacementProvider
+    {
+        public VariableReplacementProviderType VariableReplacementProviderType { get; init; } = VariableReplacementProviderType.StringReplacement;
+        public string GetVariableReplacement(string[] args)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public static class Utilities
+    {
+        public static IVariableReplacementProvider GetVariableReplacementProvider(VariableReplacementProviderType typeName)
+        {
+            return typeName switch
+            {
+                VariableReplacementProviderType.StringReplacement => new StringReplacementProvider(),
+                VariableReplacementProviderType.LinkedPromptlet => new LinkedPromptletProvider(),
+                _ => new StringReplacementProvider(),
+            };
+        }
+        public static T GetInstance<T>(params object[] args)
+        {
+            return (T)Activator.CreateInstance(
+                type: typeof(T), args: args);
+        }
+    }
+
+
+    [InterpolatedStringHandler]
+    public ref struct PromptletInterpolatedStringHandler
+    {
+        private StringBuilder builder;
+        private readonly int _length = 0;
+        private readonly int _formattedCount = 0;
+        private readonly string[] _args;
+
+        public PromptletInterpolatedStringHandler(int length, int formattedCount, string[]? args)
+        {
+            _length = length;
+            _formattedCount = formattedCount;
+            builder = new StringBuilder(length);
+            _args = args ?? Array.Empty<string>();
+        }
+
+        internal string GetFormattedText() => builder.ToString();
+
+        public void AppendLiteral(string s) => builder.Append(s);
+
+        public void AppendFormatted<T>(T t) => builder.Append(t?.ToString());
+
+        public void AppendFormatted<T>(T t, string format) where T : IFormattable
+        {
+            builder.Append(t?.ToString(format, null));
+        }
+
+    }
+
+    public enum VariableReplacementProviderType
+    {
+        StringReplacement = 0,
+        LinkedPromptlet = 1
     }
 }
